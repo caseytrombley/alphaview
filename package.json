@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "npm run dev",
     "dev": "vite",
-    "start:proxy": "node dist/server.js",
+    "start": "npm run dev",
     "start:prod": "node dist/server.js",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build:server": "tsc -p tsconfig.server.json",
+    "build": "vite build && npm run build:server",
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
